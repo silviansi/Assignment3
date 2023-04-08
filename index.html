@@ -8,139 +8,100 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
-    <title>Document</title>
+    <title>Assignment 3</title>
 </head>
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Data Realtime COVID-19</span>
+          <span class="navbar-brand mb-0 h1">Data Realtime COVID-19 <span id="country"></span></span>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+              <span id="today" aria-current="page"></span>
+          </div>
         </div>
     </nav>
 
     <!--Content-->
     <div class="container">
         <section class="row justify-content-center shadow-lg my-4">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" id="countries" aria-label="Default select example">
                 <option disable selected>Select Country</option>
             </select>
+            <div class="" id="loader">
+            </div>
         </section>
     </div>
 
-    <div class="container mt-5">
-        <div class="card mb-5" style="background-color:rgb(103, 194, 103)">
-            <div class="row row-cols-1 row-cols-md-5 justify-content-center">
-                <div class="col m-5">
-                  <div class="card h-100">
-                    <img src="img/active-cases.jpg" class="img-tumbnail" alt="">
-                    <div class="card-body">
-                      <h5 class="d-flex justify-content-center">Active Cases</h5>
-                      <h2 class="d-flex justify-content-center">0</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col m-5">
-                  <div class="card h-100">
-                    <img src="/img/new-cases.png" class="img-tumbnail" alt="">
-                    <div class="card-body">
-                      <h5 class="d-flex justify-content-center">New Cases</h5>
-                      <h2 class="d-flex justify-content-center">0</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col m-5">
-                  <div class="card h-100">
-                    <img src="/img/recovered-cases.png" class="img-tumbnail" alt="">
-                    <div class="card-body">
-                      <h5 class="d-flex justify-content-center">Recovered Cases</h5>
-                      <h2 class="d-flex justify-content-center">0</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col m-5">
-                  <div class="card h-100">
-                    <img src="/img/total-case.png" class="img-tumbnail" alt="">
-                    <div class="card-body">
-                      <h5 class="d-flex justify-content-center">Total cases</h5>
-                      <h2 class="d-flex justify-content-center">0</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col m-5">
-                    <div class="card h-100">
-                      <img src="/img/total-death.png" class="img-tumbnail" alt="">
-                      <div class="card-body">
-                        <h5 class="d-flex justify-content-center">Total Deaths</h5>
-                        <h2 class="d-flex justify-content-center">0</h2>
-                      </div>
-                    </div>
-                </div>
-                <div class="col m-5">
-                    <div class="card h-100">
-                      <img src="/img/total-test.jpg" class="img-tumbnail" alt="">
-                      <div class="card-body">
-                        <h5 class="d-flex justify-content-center">Total Test</h5>
-                        <h2 class="d-flex justify-content-center">0</h2>
-                      </div>
-                    </div>
-                </div>
-                <div class="col m-5">
-                    <div class="card h-100">
-                      <img src="/img/populasi.png" class="img-tumbnail" alt="">
-                      <div class="card-body">
-                        <h5 class="d-flex justify-content-center">Total Populasi</h5>
-                        <h2 class="d-flex justify-content-center">0</h2>
-                      </div>
-                    </div>
-                </div>
+    <section class="row justify-content-center flex-wrap">
+        <div class="col-md-3 mb-2">
+            <div class="card">
+              <img src="img/activecase.png" class="img-tumbnail" alt="">
+              <div class="card-body">
+                <h4 class="d-flex justify-content-center">Active Cases</h5>
+                <h2 class="d-flex justify-content-center" id="active-case">0</h2>
               </div>
+            </div>
         </div>
-    </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+              <img src="/img/newcases.png" class="img-tumbnail" alt="">
+              <div class="card-body">
+                <h4 class="d-flex justify-content-center">New Cases</h5>
+                <h2 class="d-flex justify-content-center" id="new-case">0</h2>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+              <img src="/img/recoveredcases.png" class="img-tumbnail" alt="">
+              <div class="card-body">
+                <h4 class="d-flex justify-content-center">Recovered Cases</h5>
+                <h2 class="d-flex justify-content-center" id="recovered-case">0</h2>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+              <img src="/img/totalcases.png" class="img-tumbnail" alt="">
+              <div class="card-body">
+                <h4 class="d-flex justify-content-center">Total Cases</h5>
+                <h2 class="d-flex justify-content-center" id="total-cases">0</h2>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+                <img src="/img/total-death.png" class="img-tumbnail" alt="">
+                <div class="card-body">
+                  <h4 class="d-flex justify-content-center">Total Deaths</h5>
+                  <h2 class="d-flex justify-content-center" id="total-deaths">0</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+                <img src="/img/totaltests.jpg" class="img-tumbnail" alt="">
+                <div class="card-body">
+                  <h4 class="d-flex justify-content-center">Total Test</h5>
+                  <h2 class="d-flex justify-content-center" id="total-tests">0</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <div class="card">
+                <img src="/img/populasi.png" class="img-tumbnail" alt="">
+                <div class="card-body">
+                  <h4 class="d-flex justify-content-center">Total Populasi</h5>
+                  <h2 class="d-flex justify-content-center" id="populasi">0</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--Footer-->
-    <footer class="text-center text-white" style="background-color: #f1f1f1;">
-      <div class="container pt-4">
-        <!-- Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark">
-            <i class="bi bi-facebook"></i></a>
-    
-          <!-- Twitter -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark">
-            <i class="bi bi-twitter"></i></a>
-    
-    
-          <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark">
-            <i class="bi bi-instagram"></i></a>
-    
-          <!-- Linkedin -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark">
-            <i class="bi bi-linkedin"></i></a>
-          
-          <!-- Github -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark">
-            <i class="bi bi-github"></i></a>
-        </section>
-      </div>
-    
-      <!-- Copyright -->
+    <footer>
       <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2023 Copyright:
         <a class="text-dark" href="silviansi@gmail.com">Silvia Nanda Syafa Iswahyudi</a>
@@ -148,5 +109,6 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/js/index.js" type="module"></script>
 </body>
 </html>
