@@ -14,7 +14,7 @@ async function getCountries() {
     return result;
 }
 
-async function getHistoryCountry(country, date) {
+async function getHistoryCountry(country) {
     const options = {
         method: 'GET',
         headers: {
@@ -23,7 +23,7 @@ async function getHistoryCountry(country, date) {
         }
     };
     
-    const response = await fetch(`${url}/history?country=${country}&day=${date}`, options);
+    const response = await fetch(`${url}/history?country=${country}`, options);
     const result = await response.json();
     return result;
 }   
