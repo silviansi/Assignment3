@@ -6,99 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
     <title>Assignment 3</title>
 </head>
-<body>
+<body style="background-color:darkseagreen">
     <!--Navbar-->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Data Realtime COVID-19 <span id="country"></span></span>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-              <span id="today" aria-current="page"></span>
-          </div>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Data Realtime COVID-19 <span class="" id="country"></span></a>
+      </div>
     </nav>
 
     <!--Content-->
     <div class="container">
-        <section class="row justify-content-center shadow-lg my-4">
+        <section class="row justify-content-center my-4">
+            <form class="d-flex" role="search">
             <select class="form-select" id="countries" aria-label="Default select example">
                 <option disable selected>Select Country</option>
             </select>
-            <div class="" id="loader">
-            </div>
+            </form>
         </section>
     </div>
 
+    <div class="container">
     <section class="row justify-content-center flex-wrap">
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="img/activecase.png" class="img-tumbnail" alt="">
               <div class="card-body">
-                <h4 class="d-flex justify-content-center">Active Cases</h5>
-                <h2 class="d-flex justify-content-center" id="active-case">0</h2>
+                <div class="d-flex justify-content-center">
+                  <img src="img/activecase.png" width="50%" alt="">
+                </div>
+                <div class="d-flex justify-content-center">
+                  <h4>Active Cases</h4>
+                </div>
+                  <div class="d-flex justify-content-center">
+                <h2 id="active-case">0</h2>
+                </div>
               </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="/img/newcases.png" class="img-tumbnail" alt="">
               <div class="card-body">
-                <h4 class="d-flex justify-content-center">New Cases</h5>
+                <div class="d-flex justify-content-center">
+                  <img src="/img/newcases.png" width="50%" alt="">
+                </div>
+                <h4 class="d-flex justify-content-center">New Cases</h4>
                 <h2 class="d-flex justify-content-center" id="new-case">0</h2>
               </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="/img/recoveredcases.png" class="img-tumbnail" alt="">
               <div class="card-body">
-                <h4 class="d-flex justify-content-center">Recovered Cases</h5>
+                <div class="d-flex justify-content-center">
+                  <img src="/img/recoveredcases.png" width="50%" alt="">
+                </div>
+                <h4 class="d-flex justify-content-center">Recovered Cases</h4>
                 <h2 class="d-flex justify-content-center" id="recovered-case">0</h2>
               </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-              <img src="/img/totalcases.png" class="img-tumbnail" alt="">
               <div class="card-body">
-                <h4 class="d-flex justify-content-center">Total Cases</h5>
+                <div class="d-flex justify-content-center">
+                  <img src="/img/totalcases.png" width="50%" alt="">
+                </div>
+                <h4 class="d-flex justify-content-center">Total Cases</h4>
                 <h2 class="d-flex justify-content-center" id="total-cases">0</h2>
               </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-                <img src="/img/total-death.png" class="img-tumbnail" alt="">
-                <div class="card-body">
-                  <h4 class="d-flex justify-content-center">Total Deaths</h5>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <img src="/img/total-death.png" width="50%" alt="">
+                </div>
+                  <h4 class="d-flex justify-content-center">Total Deaths</h4>
                   <h2 class="d-flex justify-content-center" id="total-deaths">0</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
-                <img src="/img/totaltests.jpg" class="img-tumbnail" alt="">
-                <div class="card-body">
-                  <h4 class="d-flex justify-content-center">Total Test</h5>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <img src="/img/totaltests.jpg" width="50%" alt="">
+                </div>
+                  <h4 class="d-flex justify-content-center">Total Test</h4>
                   <h2 class="d-flex justify-content-center" id="total-tests">0</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-2">
-            <div class="card">
-                <img src="/img/populasi.png" class="img-tumbnail" alt="">
-                <div class="card-body">
-                  <h4 class="d-flex justify-content-center">Total Populasi</h5>
-                  <h2 class="d-flex justify-content-center" id="populasi">0</h2>
-                </div>
-            </div>
-        </div>
     </section>
+    </div>
 
     <!--Footer-->
     <footer>
@@ -109,6 +112,6 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="/js/index.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>
