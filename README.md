@@ -1,3 +1,3 @@
 # Assignment3
 
-Menampilkan Data Realtime COViD-19 menggunakan fetch
+Menampilkan Data Realtime COVID-19 menggunakan fetch
